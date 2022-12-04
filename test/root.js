@@ -5,6 +5,11 @@ const jsdom = require('jsdom');
 const path = require('path');
 
 before(function(done) {
+
+  function shout(string){
+    return string.toUpperCase();
+  }
+  
   const babelResult = babel.transformFileSync(
     path.resolve(__dirname, '..', 'index.js'), {
       presets: ['es2015']
